@@ -1,0 +1,138 @@
+:root {
+    /* Primary */
+    --moderate-violet: hsl(263, 55%, 52%);
+    --moderate-violet-border: #a77de1;
+    --very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --white: hsl(0, 0%, 100%);
+    /* Neutral */
+    --light-gray: hsl(0, 0%, 81%);
+    --light-grayish-blue: hsl(210, 46%, 95%);
+    /* Fonts */
+    --font-family: "Barlow Semi Condensed";
+    --font-weight-500: 500;
+    --font-weight-600: 600;
+    --font-size: 13px;
+    /* Border */
+    --border-radius: 10px;
+}
+
+body {
+    padding: 100px 15px;
+    margin: 0;
+    box-sizing: border-box;
+    min-height: 100vh;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--light-grayish-blue);
+    font-family: var(--font-family);
+    color: var(--white);
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 1fr;
+    row-gap: 25px;
+}
+
+.testimonial {
+    border-radius: var(--border-radius);
+    padding: 10px 20px;
+}
+
+img {
+    border-radius: 50%;
+    margin-right: 20px;
+    width: 20%;
+    height: 20%;
+}
+
+.details {
+    width: 75%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.name {
+    font-weight: var(--font-weight-500);
+}
+
+.graduate {
+    opacity: 0.5;
+}
+
+.sentence {
+    margin-top: 0;
+    font-weight: var(--font-weight-600);
+    font-size: larger;
+}
+
+.review {
+    font-size: var(--font-size);
+    font-weight: var(--font-weight-500);
+    opacity: 0.7;
+    line-height: 1.5;
+}
+
+/* INDIVIDUAL CARDS */
+#daniel-clifford {
+    background-image: url("./images/bg-pattern-quotation.svg");
+    background-repeat: no-repeat;
+    background-position: 90% 0%;
+    background-color: var(--moderate-violet);
+}
+#daniel-clifford > .details > img {
+    border: 3px solid var(--moderate-violet-border);
+}
+
+#jonathan-walters {
+    background-color: var(--very-dark-grayish-blue);
+}
+
+#jeanette-harmon {
+    background-color: var(--white);
+    color: var(--very-dark-blackish-blue);
+}
+
+#patrick-abrams {
+    background-color: var(--very-dark-blackish-blue);
+}
+#patrick-abrams > .details > img {
+    border: 3px solid var(--moderate-violet);
+}
+
+#kira-whittle {
+    background-color: var(--white);
+    color: var(--very-dark-blackish-blue);
+}
+
+@media (min-width: 767px) {
+    .container {
+        width: 75%;
+        column-gap: 25px;
+        margin: 0 auto;
+    }
+    #daniel-clifford {
+        grid-column: 1 / span 2;
+    }
+    #daniel-clifford > .details > img {
+        width: 10%;
+        height: 10%;
+    }
+    #jonathan-walters {
+        grid-column: 3 / span 1;
+    }
+    #kira-whittle {
+        grid-column: 4 / span 1;
+        grid-row: 1 / span 2;
+    }     
+    #patrick-abrams {
+        grid-column: 2 / span 2;
+    }
+    #patrick-abrams > .details > img {
+        width: 10%;
+        height: 10%;
+    }
+}
